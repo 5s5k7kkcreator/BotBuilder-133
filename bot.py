@@ -153,13 +153,15 @@ def schedule_job(application: Application, chat_id: int, job: dict):
         return
 
     days_tuple = tuple(job["days"])
+    
+    time_with_tz = dtime(job["time"].hour, job["time"].minute, tzinfo=CAIRO_TZ)
+    
     application.job_queue.run_daily(
         send_job_callback, 
-        time=job["time"], 
+        time=time_with_tz, 
         days=days_tuple, 
         name=name, 
-        data={"chat_id": chat_id, "text": job["text"], "photo": job.get("photo")},
-        tzinfo=CAIRO_TZ
+        data={"chat_id": chat_id, "text": job["text"], "photo": job.get("photo")}
     )
     logging.info("Scheduled job %s for chat %s at %s (Cairo time) on days %s", job["id"], chat_id, job["time"], days_tuple)
 
