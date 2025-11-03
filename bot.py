@@ -39,7 +39,7 @@ async def echo(update: Update, context: ContextTypes.DEFAULT_TYPE):
     """Echo the user message."""
     await update.message.reply_text(f'You said: {update.message.text}')
 
-async def error_handler(update: Update, context: ContextTypes.DEFAULT_TYPE):
+async def error_handler(update: object, context: ContextTypes.DEFAULT_TYPE):
     """Log errors caused by updates."""
     logger.error(f'Update {update} caused error {context.error}')
 
