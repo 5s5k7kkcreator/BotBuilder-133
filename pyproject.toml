@@ -5,4 +5,6 @@ description = "Add your description here"
 requires-python = ">=3.11"
 dependencies = [
     "python-telegram-bot>=22.5",
+    "pytz>=2025.2",
+    "telegram>=0.0.1",
 ]
