@@ -1,0 +1,8 @@
+Update bot scheduling and data handling for precise message delivery
+
+Refactors data loading and saving to use `datetime` objects for job times, implements 12-hour time format parsing, and adjusts the `main.py` entry point.
+
+Replit-Commit-Author: Agent
+Replit-Commit-Session-Id: d9974dc0-22a6-49f5-9389-77cd8995ffa5
+Replit-Commit-Checkpoint-Type: full_checkpoint
+Replit-Commit-Event-Id: 10819729-7c2e-4456-ba46-f3966732a1b7
